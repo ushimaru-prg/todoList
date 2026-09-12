@@ -11,7 +11,7 @@
       if (p.textContent.trim() === "") {
         isEmpty = true;
         return;
-      } 
+      }
     });
 
     if (isEmpty) {
@@ -24,17 +24,18 @@
     //タスクをリストに追加
     lielm.classList.add("task_card");
     card_ul.appendChild(lielm);
-    
+
     //ダブルクリックのイベントを追加
     lielm.addEventListener("dblclick", () => {
-      
-
       const liElms = lielm.children;
-      const textarea = liElms[0].querySelector('textarea');
-      if(textarea !== null){
-        return;
-      }
-    
+       // //textarea複数生成防止
+       for (let i = 0; i < liElms.length; i++) {
+         if((liElms[i].matches('textarea') &&
+        liElms[i].checkVisibility())) {
+          return;
+         }
+       }
+
       const editArea = document.createElement("textarea");
       lielm.appendChild(editArea);
       editArea.classList.add("edit_show");
