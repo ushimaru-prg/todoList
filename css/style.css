@@ -19,6 +19,11 @@ section{
   box-sizing: border-box;
 }
 
+.flex_display{
+  display: flex;
+  flex-direction: row;
+}
+
 #add_list_parent{
   list-style: none;
   display: flex;
@@ -34,11 +39,8 @@ section{
 .list_area{
   text-align: center;
   background: skyblue;
-
-}
-
-.list_area_hidden{
-  display: none;
+  margin-left:  15px;
+  margin-right: 15px;
 }
 
 .task_card{
