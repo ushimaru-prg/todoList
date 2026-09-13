@@ -2,13 +2,13 @@
 
 {
   //カードを追加をクリック
-  const add_card_btn = document.querySelector(".add_card");
-  add_card_btn.addEventListener("click", () => {
+  const addCardBtn = document.querySelector(".add_card");
+  addCardBtn.addEventListener("click", () => {    
     console.log("add cardをクリック");
 
     let isEmpty = false;
-    document.querySelectorAll(".card_list .task_card p").forEach((p) => {
-      if (p.textContent.trim() === "") {
+    document.querySelectorAll(".card_list .task_card input").forEach((input) => {
+      if (input.value.trim() === "") {
         isEmpty = true;
         return;
       }
@@ -19,37 +19,20 @@
       return;
     }
 
-    const lielm = document.createElement("li");
-    const card_ul = document.querySelector(".card_list");
+    const liElm = document.createElement("li");
+    const cardUl = document.querySelector(".card_list");
     //タスクをリストに追加
-    lielm.classList.add("task_card");
-    card_ul.appendChild(lielm);
+    liElm.classList.add("task_card");
+    cardUl.appendChild(liElm);
 
-    //ダブルクリックのイベントを追加
-    lielm.addEventListener("dblclick", () => {
-      const liElms = lielm.children;
-       // //textarea複数生成防止
-       for (let i = 0; i < liElms.length; i++) {
-         if((liElms[i].matches('textarea') &&
-        liElms[i].checkVisibility())) {
-          return;
-         }
-       }
-
-      const editArea = document.createElement("textarea");
-      lielm.appendChild(editArea);
-      editArea.classList.add("edit_show");
-      editArea.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-          lielm.querySelector("p").textContent = editArea.value;
-          editArea.classList.remove("edit_show");
-          editArea.classList.add("edit_hidden");
-        }
-      });
-    });
-
-    //タスク名を表示するpタグを追加
-    const pElm = document.createElement("p");
-    lielm.appendChild(pElm);
+    //タスク名を表示するinputタグを追加
+    const taskNameText = document.createElement("input");
+    taskNameText.type = 'text';
+    taskNameText.addEventListener('keydown', (event) =>{
+      if(event.key === 'Enter'){
+        taskNameText.blur();
+      }
+    })
+    liElm.appendChild(taskNameText);
   });
 }

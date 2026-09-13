@@ -33,7 +33,7 @@ section{
 
 .list_area{
   text-align: center;
-  background: rgb(229, 209, 209);
+  background: skyblue;
 
 }
 
@@ -47,17 +47,6 @@ section{
   padding: 10px;
   border: 1px solid rgb(87, 84, 84);
   border-radius: 10px;
-  background: skyblue;
-  cursor: pointer;
-}
-
-.task_card .edit_hidden{
-  display: none;
-}
-
-.task_card .edit_show{
-  position: relative;
-  bottom: -10px;
-  right: 10px;
   background: white;
+  cursor: pointer;
 }
