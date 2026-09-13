@@ -2,9 +2,9 @@
 
 {
   //リストを追加をクリック
-  document.querySelectorAll(".add_list").forEach((liElm, index) => {
-    liElm.addEventListener("click", () => {
-      const btn = liElm.querySelector("#add_list_btn");
+  document.querySelectorAll(".add_list").forEach((liAddList, index) => {
+    liAddList.addEventListener("click", () => {
+      const btn = liAddList.querySelector("#add_list_btn");
       if (btn === null) {
         return;
       }
@@ -19,7 +19,7 @@
       btnElm.textContent = "カードを追加";
       btnElm.classList.add("add_card");
       divElm.appendChild(btnElm);
-      liElm.replaceChild(divElm, btn);
+      liAddList.replaceChild(divElm, btn);
 
       //カードを追加がクリックされた
       btnElm.addEventListener('click', () => {
@@ -39,7 +39,7 @@
           return;
         }
 
-        const cardUl = document.querySelector(".card_list");
+        const cardUl = liAddList.querySelector(".card_list");
 
         const liElm = document.createElement("li");
         liElm.classList.add("task_card");
