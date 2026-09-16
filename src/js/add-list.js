@@ -1,7 +1,6 @@
 "use strict";
 
 {
-
   function IsEmptyTaskName() {
     let isEmpty = false;
     document
@@ -51,6 +50,7 @@
 
       //カードを追加がクリックされた
       addCardBtnElm.addEventListener("click", () => {
+
         if (IsEmptyTaskName()) {
           alert("タイトルを入力してください。");
           return;
