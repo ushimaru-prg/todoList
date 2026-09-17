@@ -14,40 +14,40 @@ section {
   margin: 0;
 }
 
-.container_size {
+.container-size {
   width: 300px;
   box-sizing: border-box;
 }
 
-.flex_display {
+.flex-display {
   display: flex;
   flex-direction: row;
 }
 
-#add_list_parent {
+#add-list-parent {
   list-style: none;
   display: flex;
   flex-direction: row;
   cursor: pointer;
 }
 
-.add_list {
+.add-list {
   text-align: center;
   cursor: pointer;
 }
 
-.list_area {
+.list-area {
   text-align: center;
   background: skyblue;
   margin-left: 15px;
   margin-right: 15px;
 }
 
-.task_card {
+.task-card {
   list-style: none;
   margin: 10px;
   padding: 10px;
-  border: 1px solid rgb(87, 84, 84);
+  border: 1px solid rgb(87 84 84);
   border-radius: 10px;
   background: white;
   cursor: pointer;
