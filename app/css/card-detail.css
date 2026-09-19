@@ -15,7 +15,7 @@
   display: none;
 }
 
-.show-detail{
+.show_detail{
   display: block;
   width: 700px;
   margin: 100px auto;
