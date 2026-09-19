@@ -3,19 +3,16 @@
 .show-panel{
   display: block;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-   background-color: rgba(0, 0, 0, 0.5); /* 最後の0.5が透明度（50%） */
+  inset: 0;
+   background-color: rgb(0 0 0 / 50%); /* 最後の0.5が透明度（50%） */
   z-index: 2; /* 他の要素より手前に表示 */
 }
 
-.hidden_panel{
+.hidden-panel{
   display: none;
 }
 
-.show_detail{
+.show-detail{
   display: block;
   width: 700px;
   margin: 100px auto;
@@ -24,6 +21,6 @@
   background: pink;
 }
 
-.hidden_detail{
+.hidden-detail{
   display:none;
 }
