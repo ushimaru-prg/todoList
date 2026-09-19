@@ -1,4 +1,4 @@
-name: Pull Request Code Check
+name: Push Code Check
 
 on:
   push:
