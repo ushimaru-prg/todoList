@@ -1,22 +1,26 @@
 name: Pull Request Code Check
-on:
- pull_request:
-  branches: ["develop"]
 
-job:
- Pull-Request_Check:
-  runs-on: ubuntu-latest
-   steps:
-    # node,jsの準備
-    - uses: actions/checkout@v3
-    - name: Use Node.js v20
-      uses: actions/setup-node@v3
-      with:
-      node-version: 20
-      cache: "npm"
-    #インストール
-    - run: npm ci
-    #テスト、リント、フォーマットチェック
-    -run: npm run eslint-check
-    -run: npm run type-check
-    -run: npm run prettier-check
+on:
+  pull_request:
+    branches: ["develop"]
+
+jobs:
+  Pull-Request_Check:
+    runs-on: ubuntu-latest
+    steps:
+      # node.jsの準備
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js v20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "npm"
+
+      # インストール
+      - run: npm ci
+
+      # テスト、リント、フォーマットチェック
+      - run: npm run eslint-check
+      - run: npm run type-check
+      - run: npm run prettier-check
