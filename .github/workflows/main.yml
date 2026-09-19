@@ -1,7 +1,7 @@
 name: Pull Request Code Check
 on:
 pull_request:
-branches:["main"]
+branches: ["develop"]
 
 job:
 Pull-Request_Check:
