@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+.show-panel{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   background-color: rgba(0, 0, 0, 0.5); /* 最後の0.5が透明度（50%） */
+  z-index: 2; /* 他の要素より手前に表示 */
+}
+
+.hidden-panel{
+  display: none;
+}
+
+.show-detail{
+  display: block;
+  width: 700px;
+  margin: 100px auto;
+  z-index:5;
+  color:white;
+  background: pink;
+}
+
+.hidden_detail{
+  display:none;
+}

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- リセットCSS-->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/list-card.css" />
+    <link rel="stylesheet" href="../css/card-detail.css"/>
     <title>MyTodoList</title>
   </head>
   <body>
@@ -30,6 +31,14 @@
           <button id="add_list-btn">リストを追加</button>
         </li> -->
       </ul>
+
+      <div class="hideen-panel">
+        <div class="hidden_detail">
+          <p>タイトル</p>
+          <p>説明</p>
+          <textarea placeholder="詳しい説明を入力してください"></textarea>
+        </div>
+      </div>
     </section>
     <script src="../js/add-list.js"></script>
   </body>
