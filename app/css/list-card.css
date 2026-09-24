@@ -14,6 +14,15 @@ section {
   margin: 0;
 }
 
+textarea {
+  field-sizing: content;
+  box-sizing:border-box;
+  min-height: 0.5em;
+  max-height: 10em;
+  width: 100%;
+  overflow: hidden;
+}
+
 .container-size {
   width: 300px;
   box-sizing: border-box;
@@ -43,6 +52,14 @@ section {
   margin-right: 15px;
 }
 
+.add-card-enable{
+  background:none;
+}
+
+.add-card-disable{
+  background: blue;
+}
+
 .task-card {
   list-style: none;
   margin: 10px;
@@ -51,4 +68,8 @@ section {
   border-radius: 10px;
   background: white;
   cursor: pointer;
+}
+
+.task-name-disable{
+  pointer-events: none;
 }
