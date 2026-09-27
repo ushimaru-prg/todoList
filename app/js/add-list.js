@@ -1,19 +1,6 @@
 "use strict";
 
 {
-  function IsEmptyTaskName() {
-    let isEmpty = false;
-    document
-      .querySelectorAll(".card-list .task-card textarea")
-      .forEach((input) => {
-        if (input.value.trim() === "") {
-          isEmpty = true;
-          return isEmpty;
-        }
-      });
-    return isEmpty;
-  }
-
   function AddCardEnable(addCardBtnElm) {
     addCardBtnElm.classList.remove("add-card-disable");
     addCardBtnElm.classList.add("add-card-enable");
@@ -40,13 +27,9 @@
       } else {
         AddCardEnable(addCardBtn);
         taskNameText.disabled = true;
-        taskNameText.classList.add('task-name-disable');
+        taskNameText.classList.add("task-name-disable");
       }
     });
-
-    // taskNameText.addEventListener('click', (event)=>{
-    //       event.preventDefault();
-    //     })
 
     document.addEventListener("click", (event) => {
       if (!taskNameText.contains(event.target)) {
@@ -56,8 +39,17 @@
     liElm.appendChild(taskNameText);
     taskNameText.focus();
 
-    liElm.addEventListener('click', ()=>{
-      console.log("liElm click!");
+    liElm.addEventListener("click", (event) => {
+      const taskNameText = liElm.querySelector("textarea");
+      if (taskNameText.disabled && taskNameText.classList.contains("task-name-disable")) {
+        console.log(event.target.querySelector('textarea').value);
+        const panel = document.querySelector(".hidden-panel");
+        const detail = document.querySelector(".hidden-detail");
+        panel.classList.remove("hidden-panel");
+        panel.classList.add("show-panel");
+        detail.classList.remove("hidden-detail");
+        detail.classList.add("show-detail");
+      }
     });
   }
 
@@ -121,7 +113,7 @@
         liElm.classList.add("task-card");
         cardUl.appendChild(liElm);
         //タスク名を表示するinputタグを追加
-        RegisterTaskNameInput(addCardBtnElm, liElm);
+        TaskNameTextRegister(addCardBtnElm, liElm);
       });
 
       //リスト追加ボタンを右端に追加
